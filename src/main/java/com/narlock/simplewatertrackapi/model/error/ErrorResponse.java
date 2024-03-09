@@ -16,5 +16,5 @@ public class ErrorResponse {
   private String message;
   private String detail;
   private String timestamp;
-  private final String documentation = "http://github.com/narlock/simple-weight-tracking-api";
+  private final String documentation = "http://github.com/narlock/simple-water-track-api";
 }
