@@ -11,10 +11,10 @@ import lombok.RequiredArgsConstructor;
 @Entity
 @Table(name = "WaterSetting")
 public class WaterSetting {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer profileId;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Integer profileId;
 
-    private Integer goal;
-    private String unit;
+  private Integer goal;
+  private String unit;
 }
