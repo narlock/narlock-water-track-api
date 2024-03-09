@@ -1,15 +1,8 @@
 package com.narlock.simplewatertrackapi.service;
 
-import com.narlock.simplewatertrackapi.model.DateWeightEntryResponse;
 import com.narlock.simplewatertrackapi.model.WaterSetting;
-import com.narlock.simplewatertrackapi.model.WeightEntry;
-import com.narlock.simplewatertrackapi.model.WeightEntryRequest;
 import com.narlock.simplewatertrackapi.model.error.NotFoundException;
 
-import java.time.LocalDate;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
 import java.util.Optional;
 
 import com.narlock.simplewatertrackapi.repository.WaterSettingRepository;
