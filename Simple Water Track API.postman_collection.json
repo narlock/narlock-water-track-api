@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "2a8539c3-50ce-400c-aac9-ca12eed8a77b",
+		"name": "Simple Water Track API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33063116"
+	},
+	"item": [
+		{
+			"name": "Settings",
+			"item": [
+				{
+					"name": "Create Water Settings",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"profileId\": 1,\n    \"goal\": 80,\n    \"unit\": \"oz\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8083/water/settings",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"water",
+								"settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Water Setting By Profile",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Update Water Setting",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"profileId\": 1,\n    \"goal\": 80,\n    \"unit\": \"oz\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8083/water/settings",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"water",
+								"settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Water Setting By Profile",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8083/water/settings/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"water",
+								"settings",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Create Entry",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": \"2024-03-09\",\n    \"profileId\": 1,\n    \"entry\": 0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8083/water",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"water"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get by Date, Profile",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Add Water To Entry",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "localhost:8083/water/entry?date=2024-03-09&profileId=1&water=10",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"water",
+						"entry"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2024-03-09"
+						},
+						{
+							"key": "profileId",
+							"value": "1"
+						},
+						{
+							"key": "water",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
