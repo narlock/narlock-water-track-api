@@ -3,8 +3,11 @@ package com.narlock.simplewatertrackapi.controller;
 import com.narlock.simplewatertrackapi.model.WaterEntry;
 import com.narlock.simplewatertrackapi.service.WaterEntryService;
 import java.time.LocalDate;
+import java.util.List;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,5 +39,17 @@ public class WaterEntryController {
       @RequestParam(name = "profileId") Integer id,
       @RequestParam(name = "water") Integer amountOfWaterToAdd) {
     return waterEntryService.addToWaterEntryOnDateProfile(date, id, amountOfWaterToAdd);
+  }
+
+  @GetMapping("/range")
+  @ResponseStatus(HttpStatus.OK)
+  public List<WaterEntry> getWaterEntryByRange(
+          @RequestParam(value = "startDate", required = true)
+          @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+          LocalDate startDate,
+          @RequestParam(value = "endDate", required = true)
+          @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+          LocalDate endDate) {
+    return waterEntryService.getWaterEntryByRange(startDate, endDate);
   }
 }

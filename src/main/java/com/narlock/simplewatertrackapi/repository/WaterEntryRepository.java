@@ -20,4 +20,7 @@ public interface WaterEntryRepository extends JpaRepository<WaterEntry, LocalDat
       @Param("entry") Integer entry);
 
   List<WaterEntry> findByProfileIdAndDate(Integer profileId, LocalDate date);
+
+  // TODO Update to include profileId
+  List<WaterEntry> findByDateBetween(LocalDate startDate, LocalDate endDate);
 }

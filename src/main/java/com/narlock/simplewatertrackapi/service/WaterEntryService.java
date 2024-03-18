@@ -50,4 +50,8 @@ public class WaterEntryService {
     currentEntry.setEntry(currentEntry.getEntry() + amountOfWaterToAdd);
     return waterEntryRepository.save(currentEntry);
   }
+
+  public List<WaterEntry> getWaterEntryByRange(LocalDate startDate, LocalDate endDate) {
+    return waterEntryRepository.findByDateBetween(startDate, endDate);
+  }
 }
