@@ -4,7 +4,6 @@ import com.narlock.simplewatertrackapi.model.WaterEntry;
 import com.narlock.simplewatertrackapi.service.WaterEntryService;
 import java.time.LocalDate;
 import java.util.List;
-
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -32,7 +31,7 @@ public class WaterEntryController {
     return waterEntryService.getWaterEntryByDateProfile(date, id);
   }
 
-  @PatchMapping
+  @PutMapping
   @ResponseStatus(HttpStatus.OK)
   public WaterEntry addToWaterEntryOnDateProfile(
       @RequestParam(name = "date") LocalDate date,
@@ -44,10 +43,10 @@ public class WaterEntryController {
   @GetMapping("/range")
   @ResponseStatus(HttpStatus.OK)
   public List<WaterEntry> getWaterEntryByRange(
-          @RequestParam(value = "startDate", required = true)
+      @RequestParam(value = "startDate", required = true)
           @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
           LocalDate startDate,
-          @RequestParam(value = "endDate", required = true)
+      @RequestParam(value = "endDate", required = true)
           @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
           LocalDate endDate) {
     return waterEntryService.getWaterEntryByRange(startDate, endDate);
