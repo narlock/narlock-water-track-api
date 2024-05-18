@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.narlock</groupId>
-	<artifactId>simple-water-track-api</artifactId>
+	<artifactId>narlock-water-track-api</artifactId>
 	<version>1.0.0</version>
-	<name>simple-water-track-api</name>
+	<name>narlock-water-track-api</name>
 	<description>Water tracking API</description>
 	<properties>
 		<java.version>17</java.version>

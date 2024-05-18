@@ -1,7 +1,7 @@
-package com.narlock.simplewatertrackapi.controller;
+package com.narlock.watertrackapi.controller;
 
-import com.narlock.simplewatertrackapi.model.error.ErrorResponse;
-import com.narlock.simplewatertrackapi.model.error.NotFoundException;
+import com.narlock.watertrackapi.model.error.ErrorResponse;
+import com.narlock.watertrackapi.model.error.NotFoundException;
 import java.time.LocalDateTime;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

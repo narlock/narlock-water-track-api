@@ -1,4 +1,4 @@
-package com.narlock.simplewatertrackapi.model;
+package com.narlock.watertrackapi.model;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
@@ -11,11 +11,16 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Entity
 @Table(name = "WaterEntry")
+@IdClass(WaterEntryId.class)
 public class WaterEntry {
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private LocalDate date = LocalDate.now();
-
+  @Column(name = "profile_id")
   private Integer profileId;
-  private Integer entry;
+
+  @Id
+  @Column(name = "entry_date")
+  private LocalDate entryDate;
+
+  @Column(name = "entry_amount")
+  private Integer entryAmount;
 }

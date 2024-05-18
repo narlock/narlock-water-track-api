@@ -1,4 +1,4 @@
-package com.narlock.simplewatertrackapi.model.error;
+package com.narlock.watertrackapi.model.error;
 
 public class NotFoundException extends RuntimeException {
   public NotFoundException(String message) {

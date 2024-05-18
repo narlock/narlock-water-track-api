@@ -1,12 +1,12 @@
-package com.narlock.simplewatertrackapi;
+package com.narlock.watertrackapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SimpleWaterTrackApiApplication {
+public class WaterTrackApiApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(SimpleWaterTrackApiApplication.class, args);
+    SpringApplication.run(WaterTrackApiApplication.class, args);
   }
 }

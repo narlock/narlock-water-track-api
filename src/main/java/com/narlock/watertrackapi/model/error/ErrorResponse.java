@@ -1,4 +1,4 @@
-package com.narlock.simplewatertrackapi.model.error;
+package com.narlock.watertrackapi.model.error;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
@@ -16,5 +16,5 @@ public class ErrorResponse {
   private String message;
   private String detail;
   private String timestamp;
-  private final String documentation = "http://github.com/narlock/simple-water-track-api";
+  private final String documentation = "http://github.com/narlock/narlock-water-track-api";
 }
