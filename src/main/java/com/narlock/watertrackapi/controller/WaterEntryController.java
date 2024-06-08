@@ -3,14 +3,13 @@ package com.narlock.watertrackapi.controller;
 import com.narlock.watertrackapi.model.WaterEntry;
 import com.narlock.watertrackapi.model.WaterEntryId;
 import com.narlock.watertrackapi.service.WaterEntryService;
+import java.time.LocalDate;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
-import java.time.LocalDate;
-import java.util.List;
 
 @Slf4j
 @RestController
@@ -40,10 +39,14 @@ public class WaterEntryController {
 
   @GetMapping
   @ResponseStatus(HttpStatus.OK)
-  public List<WaterEntry> getWaterEntries(@RequestParam Integer profileId, @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-  LocalDate entryDate) {
-    if(entryDate != null) {
-      return List.of(waterEntryService.getWaterEntryById(WaterEntryId.builder().profileId(profileId).entryDate(entryDate).build()));
+  public List<WaterEntry> getWaterEntries(
+      @RequestParam Integer profileId,
+      @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+          LocalDate entryDate) {
+    if (entryDate != null) {
+      return List.of(
+          waterEntryService.getWaterEntryById(
+              WaterEntryId.builder().profileId(profileId).entryDate(entryDate).build()));
     }
 
     return waterEntryService.getWaterEntriesByProfileId(profileId);
@@ -51,7 +54,10 @@ public class WaterEntryController {
 
   @GetMapping("/range")
   @ResponseStatus(HttpStatus.OK)
-  public List<WaterEntry> getWaterEntriesRange(@RequestParam Integer profileId, @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate, @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate) {
+  public List<WaterEntry> getWaterEntriesRange(
+      @RequestParam Integer profileId,
+      @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
+      @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate) {
     return waterEntryService.getWaterEntriesByRange(profileId, startDate, endDate);
   }
 }
